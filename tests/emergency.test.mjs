@@ -8,11 +8,12 @@ test('Verify emergency numbers data structure and direct dial routing', () => {
     { id: '2', label: 'Ambulance', number: '108', color: '#2a9d8f' },
     { id: '3', label: 'Police', number: '100', color: '#457b9d' },
     { id: '4', label: 'Road Accidents', number: '1073', color: '#f77f00' },
+    { id: '5', label: 'Women Helpline', number: '1091', color: '#8338ec' },
   ];
 
-  const DIRECT_DIAL_NUMBERS = new Set(['112', '108', '100', '1073']);
+  const DIRECT_DIAL_NUMBERS = new Set(['112', '108', '100', '1073', '1091']);
 
-  assert.equal(INDIA_EMERGENCY.length, 4, 'Should contain exactly 4 primary national helplines');
+  assert.equal(INDIA_EMERGENCY.length, 5, 'Should contain exactly 5 primary national helplines');
   
   for (const item of INDIA_EMERGENCY) {
     assert.ok(item.id, 'Entry must have an ID');
