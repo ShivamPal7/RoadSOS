@@ -1,0 +1,29 @@
+name: RoadSOS CI Pipeline
+
+on:
+  push:
+    branches: [ main, master ]
+  pull_request:
+    branches: [ main, master ]
+
+jobs:
+  build-validate-test:
+    name: Build, Validate & Automated Tests
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Checkout Code
+        uses: actions/checkout@v4
+
+      - name: Setup Node.js
+        uses: actions/setup-node@v4
+        with:
+          node-version: '20.x'
+
+      - name: Validate Server Syntax
+        run: |
+          npm run validate
+
+      - name: Execute Automated Unit Tests
+        run: |
+          npm test
