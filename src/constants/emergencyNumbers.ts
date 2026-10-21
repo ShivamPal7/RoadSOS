@@ -36,9 +36,17 @@ export const INDIA_EMERGENCY = [
     color: '#f77f00',
     description: 'National Highway helpline',
   },
+  {
+    id: '5',
+    label: 'Women Helpline',
+    number: '1091',
+    icon: '🛡️',
+    color: '#8338ec',
+    description: '24x7 Emergency helpline for women in distress',
+  },
 ] as const;
 
 export type EmergencyNumber = typeof INDIA_EMERGENCY[number];
 
 /** Numbers that should NEVER show a confirmation dialog */
-export const DIRECT_DIAL_NUMBERS = new Set(['112', '108', '100', '1073']);
+export const DIRECT_DIAL_NUMBERS = new Set(['112', '108', '100', '1073', '1091']);
